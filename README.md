@@ -259,5 +259,18 @@ int main() {
 }
 
 ```
+Nesse exemplo, é calculado o fatorial de 100.
 
 ## Como executar o exemplo do fatorial
+
+Compilando o arquivo
+
+```bash
+gcc -I ./headers ./src/*.c ./example/factorial.c  -o ./build/factorial 
+```
+
+Executando
+
+```bash 
+./build/factorial
+```
