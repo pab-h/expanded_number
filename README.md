@@ -209,7 +209,7 @@ Expanded_Number *multiply_expanded_number(Expanded_Number *a, Expanded_Number *b
 ## Aplicação: Fatorial 
 
 ```c
-#include "expanded_number.h"
+#include "../headers/expanded_number.h"
 
 Expanded_Number *factorial_expanded_number(Expanded_Number *number) {
     Expanded_Number *result = create_expanded_number();
@@ -244,4 +244,20 @@ Expanded_Number *factorial_expanded_number(Expanded_Number *number) {
 
     return result;
 }
+
+int main() {
+
+    Expanded_Number *number = create_expanded_number();
+    append_expanded_number_part(number, 1, 2);
+
+    Expanded_Number *factorial = factorial_expanded_number(number);
+
+    describe_expanded_number(factorial);
+    print_expanded_number(factorial);
+
+    return 1;
+}
+
 ```
+
+## Como executar o exemplo do fatorial
