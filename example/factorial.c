@@ -1,4 +1,4 @@
-#include "expanded_number.h"
+#include "../headers/expanded_number.h"
 
 Expanded_Number *factorial_expanded_number(Expanded_Number *number) {
     Expanded_Number *result = create_expanded_number();

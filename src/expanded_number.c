@@ -1,4 +1,4 @@
-#include "expanded_number.h"
+#include "../headers/expanded_number.h"
 #include <stdlib.h>
 #include <stdio.h>
 
