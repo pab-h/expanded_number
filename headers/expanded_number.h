@@ -38,4 +38,6 @@ Expanded_Number *multiply_expanded_number(Expanded_Number *a, Expanded_Number *b
 
 void describe_expanded_number(Expanded_Number *number);
 
+void print_expanded_number(Expanded_Number *number);
+
 #endif

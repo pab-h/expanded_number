@@ -1,4 +1,5 @@
 #include "../headers/expanded_number.h"
+#include "../headers/stack.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -129,6 +130,53 @@ void append_expanded_number_part(Expanded_Number *number, unsigned int module, i
         current = current->next;
 
     }
+
+}
+
+void print_expanded_number(Expanded_Number *number) {
+    printf("\n");
+
+    if (is_empty_expanded_number(number)) {
+        printf("0");
+        
+        return;
+    }
+
+    Stack *stack = create_stack();
+
+    Expanded_Number_Part *current_part = number->head;
+
+    while (current_part) {
+        push_stack(stack, current_part->module, current_part->order);
+
+        current_part = current_part->next;
+    }
+
+    Stack_Node *current_poped_stack_node = pop_stack(stack);
+    Stack_Node *current_peeked_stack_node = peek_stack(stack);
+
+    while (current_peeked_stack_node) {
+        int zeros_between = current_poped_stack_node->order - current_peeked_stack_node->order - 1;
+
+        printf("%u", current_poped_stack_node->module);
+
+        for (int i = 0; i < zeros_between; i++) {
+            printf("0");
+        }
+
+        current_poped_stack_node = pop_stack(stack);
+        current_peeked_stack_node = peek_stack(stack);
+    }
+
+    printf("%u", current_poped_stack_node->module);
+
+    int zeros_after_last_poped_stack_node = current_poped_stack_node->order;
+
+    for (int i = 0; i < zeros_after_last_poped_stack_node; i++) {
+        printf("0");
+    }
+
+    printf("\n");
 
 }
 
@@ -286,3 +334,13 @@ Expanded_Number *multiply_expanded_number(Expanded_Number *a, Expanded_Number *b
     return result;
 }
 
+// int main() {
+//     Expanded_Number *number = create_expanded_number();
+
+//     append_expanded_number_part(number, 1, 4);
+//     append_expanded_number_part(number, 2, 1);
+//     append_expanded_number_part(number, 3, 0);
+
+//     print_expanded_number(number);
+
+// }
