@@ -42,6 +42,7 @@ int main() {
     Expanded_Number *factorial = factorial_expanded_number(number);
 
     describe_expanded_number(factorial);
+    print_expanded_number(factorial);
 
     return 1;
 }
