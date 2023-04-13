@@ -1,4 +1,5 @@
 #include "../headers/stack.h"
+#include <stdlib.h>
 
 Stack *create_stack() {
     Stack *stack = malloc(sizeof(Stack));
@@ -23,8 +24,8 @@ void push_stack(Stack *stack, unsigned int module, int order) {
 }
 
 Stack_Node *pop_stack(Stack *stack) {
-    if (isEmpty(stack)) {
-        return;
+    if (is_empty_stack(stack)) {
+        return 0;
     }
 
     Stack_Node *poped_node = stack->top;
@@ -36,8 +37,8 @@ Stack_Node *pop_stack(Stack *stack) {
 }
 
 Stack_Node *peek_stack(Stack *stack) {
-    if (isEmpty(stack)) {
-        return;
+    if (is_empty_stack(stack)) {
+        return 0;
     }
 
     return stack->top;
