@@ -29,8 +29,6 @@ Stack_Node *pop_stack(Stack *stack) {
     }
 
     Stack_Node *poped_node = stack->top;
-    Stack_Node *tmp = stack->top;
-
     stack->top = stack->top->next;
 
     return poped_node;

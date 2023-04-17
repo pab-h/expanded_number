@@ -36,6 +36,8 @@ Expanded_Number *multiply_by_expanded_number_part(Expanded_Number *number, Expan
 
 Expanded_Number *multiply_expanded_number(Expanded_Number *a, Expanded_Number *b);
 
+Expanded_Number *create_from_int(int n);
+
 void describe_expanded_number(Expanded_Number *number);
 
 void print_expanded_number(Expanded_Number *number);

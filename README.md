@@ -1,7 +1,7 @@
 # Expanded Number
 Um Expanded Number é a representação computacional de um número real expandido em suas somas multiplicadas por dez elevado a suas respectivas ordens. 
 
-## Representação visual  
+## Representação visual
 (p<sub>0</sub>)[m<sub>0</sub> o<sub>0</sub>] -> ... -> (p<sub>i</sub>)[m<sub>i</sub> o<sub>i</sub>] -> ... -> (p<sub>n</sub>)[m<sub>n</sub> o<sub>n</sub>] -> **λ**	
 
 Onde p<sub>i</sub> é a i-ésima **parte**, m<sub>i</sub> é o i-ésimo **módulo** e o<sub>i</sub> é a i-ésima **ordem** de um Expanded Number.
@@ -26,7 +26,7 @@ Dessa forma, na representação *Expanded Number* será:
 
 ## Operações
 
-### Normalização 
+### Normalização
 Normaliza um *Expanded Number*.
 
 Exemplos de *Expanded Number* não normalizado:
@@ -154,7 +154,7 @@ Expanded_Number *sum_expanded_number(Expanded_Number *a, Expanded_Number *b) {
 }
 ```
 
-### Multiplicação 
+### Multiplicação
 Seja **a** = (p<sub>0</sub>)[2 0] -> **λ** 
 
 Seja **b** = (p<sub>0</sub>)[3 0] -> (p<sub>1</sub>)[3 1] -> **λ** 
@@ -206,7 +206,7 @@ Expanded_Number *multiply_expanded_number(Expanded_Number *a, Expanded_Number *b
     return result;
 }
 ```
-## Aplicação: Fatorial 
+## Aplicação: Fatorial
 
 ```c
 #include "../headers/expanded_number.h"
@@ -247,8 +247,7 @@ Expanded_Number *factorial_expanded_number(Expanded_Number *number) {
 
 int main() {
 
-    Expanded_Number *number = create_expanded_number();
-    append_expanded_number_part(number, 1, 2);
+    Expanded_Number *number = create_from_int(100);
 
     Expanded_Number *factorial = factorial_expanded_number(number);
 
@@ -266,11 +265,17 @@ Nesse exemplo, é calculado o fatorial de 100.
 Compilando o arquivo
 
 ```bash
-gcc -I ./headers ./src/*.c ./example/factorial.c  -o ./build/factorial 
+make
 ```
 
 Executando
 
 ```bash 
-./build/factorial
+make run_factorial
+```
+
+Limpar o diretório de build
+
+```bash
+make clean
 ```
