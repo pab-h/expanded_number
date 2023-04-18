@@ -334,6 +334,18 @@ Expanded_Number *multiply_expanded_number(Expanded_Number *a, Expanded_Number *b
     return result;
 }
 
+Expanded_Number *create_from_int(int n) {
+    Expanded_Number *number = create_expanded_number();
+    int order = 0;
+    while (n > 0) {
+        int module = n % 10;
+        if (module > 0)
+            append_expanded_number_part(number, module, order);
+        order++;
+        n /= 10;
+    }
+    return number;
+}
 // int main() {
 //     Expanded_Number *number = create_expanded_number();
 
